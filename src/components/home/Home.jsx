@@ -1,10 +1,13 @@
 import React from "react";
 import "./Home.css";
 import CoursesData from "../../api/coursesdata/CoursesData";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 const Home = () => {
   return (
     <div>
+    <Header />
     <div className="jumbotron">
       <h1 className="display-4">Hello, world!</h1>
       <p className="lead">
@@ -25,6 +28,7 @@ const Home = () => {
     
       <CoursesData />
     
+    <Footer />
     </div>
   );
 };

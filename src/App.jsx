@@ -1,17 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import Header from './components/header/Header'
-import Home from './components/home/Home'
-import Footer from './components/footer/Footer'
+import { PocketProvider } from './contexts/PocketContexts';
+import RequireAuth from './components/RequireAuth';
+
+
+
 
 
 function App() {
 
   return (
     <div>
-      <Header/>
-      <Home/>
-      <Footer/>
+      <PocketProvider>
+        <RequireAuth  />
+      </PocketProvider>
     </div>
   )
 }
