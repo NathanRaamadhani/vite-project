@@ -1,12 +1,7 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import { render } from "react-dom";
+import { Link } from "react-router-dom";
 
 const DataPerItem = ({ data }) => {
-  
-
-
   const cardstyle = {
     width: "100%",
     display: "flex",
@@ -17,7 +12,6 @@ const DataPerItem = ({ data }) => {
     borderRadius: "3px",
     marginTop: "10px",
   };
-   
 
   const {
     newsCategory,
@@ -29,16 +23,14 @@ const DataPerItem = ({ data }) => {
   } = data;
 
   return (
-    <div style={{alignItems:"center"}}>
-      <Card style={cardstyle}>
-        <Card.Header color="blue" >
-        <Card.Img variant="top" src={newsPreviewImage}/>
-        </Card.Header>
-        <Card.Body>
-          <Card.Title>{newsTitle}</Card.Title>
-          <Button style={{ marginTop: '10px' }} variant="primary" className="mt-3px">Read More</Button>
-        </Card.Body>
-      </Card>
+    <div className="card">
+      <img src={newsPreviewImage} className="card-img-top" />
+      <div className="card-body">
+        <h5 className="card-title">{newsTitle}</h5>
+        <Link to={`/news/${_id}`}>
+          <button className="btn btn-primary">Read More</button>
+        </Link>
+      </div>
     </div>
   );
 };

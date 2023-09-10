@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { usePocket } from "../../contexts/PocketContexts";
-import "./Login.css";
-
+import "./Register.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -26,7 +25,7 @@ export default function Login() {
             }}
           >
             <img src="/vite.svg" />
-            <h2 className="title">Welcome and Login</h2>
+            <h2 className="title">Welcome and Register</h2>
             <div className="input-div one">
               <div className="i">
                 <i className="fas fa-user" />
@@ -59,19 +58,20 @@ export default function Login() {
                 />
               </div>
             </div>
-            <a href="#">Forgot Password?</a>
             <button
               className="button"
               onClick={(e) => {
                 e.preventDefault();
-                login(email, password).then(console.log("user logged in"));
+                register(email, password).then(() => {
+                  login(email, password).then(console.log("user logged in"));
+                });
               }}
             >
-              Login
+              Register and Login
             </button>
             <div className="reg">
 
-              <a href="/register">Don't have account?</a>
+              <a href="/">Have account?</a>
             </div>
           </form>
         </div>
